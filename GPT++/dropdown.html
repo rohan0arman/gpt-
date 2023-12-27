@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DROPDOWN</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            position: relative;
+            height: 100vh;
+            width: 100vw;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            align-items: center;
+        }
+
+        #dropdown {
+            padding: 10px 25px;
+            border: 1px solid grey;
+        }
+
+        #dropdown-menu {
+            list-style: none;
+        }
+
+        #dropdown[open] {
+            background-color: black;
+        }
+    </style>
+</head>
+
+<body>
+
+    <details id="dropdown">
+        <summary>
+            Gender
+        </summary>
+    </details>
+
+    <script>
+        let $dropdown = document.getElementById('#dropdown');
+        let $dropdownMenu = document.getElementById('#dropdown-menu');
+        $dropdownMenu.style.width = window.getComputedStyle($dropdown).width;
+        $dropdownMenu.style.padding = window.getComputedStyle($dropdown).padding;
+
+
+    </script>
+</body>
+
+</html>

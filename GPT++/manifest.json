@@ -1,0 +1,44 @@
+{
+  "manifest_version": 3,
+  "name": "GPT++",
+  "version": "1.0",
+  "description": "a chrome extension for chatGPT with additional features like [auto-search , chat-download]",
+  "icons": {
+    "16": "gpt-icon.png",
+    "48": "gpt-icon.png",
+    "128": "gpt-icon128.png"
+  },
+  "action": {
+    "default_icon": {
+      "128": "gpt-icon.png"
+    },
+    "default_popup": "gpt-popup.html"
+  },
+  "permissions": [
+    "activeTab",
+    "tabs"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://chat.openai.com/*"
+      ],
+      "js": [
+        "gpt-content.js"
+      ],
+      "css": [
+        "gpt-style.css"
+      ]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "matches": [
+        "https://chat.openai.com/*"
+      ],
+      "resources": [
+        "gpt-svgicon.js" , "gpt-utility.js"
+      ]
+    }
+  ]
+}

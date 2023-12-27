@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+  </head>
+
+  <body>
+    <div id="mydiv">
+      <p></p>
+    </div>
+    <button id="inc">INC</button>
+    <button id="addp">addp</button>
+  </body>
+  <script>
+
+window.myVariable ;
+let myVariableValue = null;
+
+function myFunction(newValue) {
+  console.log("The new value is: " + newValue);
+}
+
+Object.defineProperty(window, 'myVariable', {
+  get: function() {
+    return myVariableValue;
+  },
+  set: function(value) {
+    if (value === myVariableValue) {
+      return;
+    }
+    myFunction(value);
+    myVariableValue = value;
+  }
+});
+
+myVariable = 42; // Output: "The new value is: 42"
+myVariable = 72;
+console.log(myVariable);
+  </script>
+
+</html>
